@@ -3,6 +3,6 @@ module com.example.cafenintyfour {
     requires javafx.fxml;
 
 
-    opens com.example.cafenintyfour to javafx.fxml;
-    exports com.example.cafenintyfour;
+    opens cafe94 to javafx.fxml;
+    exports cafe94;
 }

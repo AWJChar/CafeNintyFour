@@ -1,4 +1,4 @@
-package com.example.cafenintyfour;
+package cafe94;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
