@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.AccountsController">
+   <children>
+      <Label layoutX="223.0" layoutY="18.0" text="Create an Account">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <VBox layoutX="40.0" layoutY="65.0" prefHeight="296.0" prefWidth="520.0" spacing="20.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label fx:id="Username2" style="-fx-padding: 5 10 0 0;" text="Email" />
+                  <TextField fx:id="emailInput">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="Username1" style="-fx-padding: 5 10 0 0;" text="First Name" />
+                  <TextField fx:id="firstNameInput">
+                     <HBox.margin>
+                        <Insets left="32.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="Username" style="-fx-padding: 5 10 0 0;" text="Last Name" />
+                  <TextField fx:id="lastNameInput">
+                     <HBox.margin>
+                        <Insets left="34.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="Username3" style="-fx-padding: 5 10 0 0;" text="Password" />
+                  <PasswordField fx:id="passwordInput">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="Username4" style="-fx-padding: 5 10 0 0;" text="Phone Number" />
+                  <TextField fx:id="phoneNumberInput">
+                     <HBox.margin>
+                        <Insets left="9.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="Username5" style="-fx-padding: 5 10 0 0;" text="Address" />
+                  <TextField fx:id="addressInput">
+                     <HBox.margin>
+                        <Insets left="47.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" text="Create Account!" onMouseClicked="#createAccount">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
