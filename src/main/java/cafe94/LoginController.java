@@ -22,6 +22,8 @@ public class LoginController {
     private Scene scene;
     private Parent root;
 
+    private AccountsController accountsController = new AccountsController();
+
     private ArrayList<User> Users = new ArrayList<>();
 
     @FXML
@@ -43,24 +45,27 @@ public class LoginController {
         stage.setScene(scene);
     }
 
-    public void switchToGuestHome(ActionEvent event) throws IOException {
+    public void switchToGuestHome(ActionEvent event) throws Exception {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("guest-home-page.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
     }
 
-    public void switchToHome(ActionEvent event) throws IOException {
+    public void switchToHome(ActionEvent event) throws Exception {
 
         String username = usernameInput.getText();
         String password = passwordInput.getText();
+        //accountsController.loadAccount(username,password);
         System.out.println(username);
         System.out.println(password);
 
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-page.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        if (accountsController.loadAccount(username, password)) {
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-page.fxml")));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+        }
     }
 
 }

@@ -1,1 +1,4 @@
-name,climber,iboughtwine,wales,emailsahkjshd,876543217,true,2024-04-26,null
+Ad,Min,adminpassword,Restaurant,admin@admin.com,123456789,true,2024-04-27,null,2
+staff,member,staffpassword,Restaurant,staff@staff.com,987654321,true,2024-04-27,null,1
+customer,user,userpassword,Customer Home,user@user.com,135798642,true,2024-04-27,null,0
+

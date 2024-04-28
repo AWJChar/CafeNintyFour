@@ -4,10 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class AccountsController {
+
+    private UserManager userManager = new UserManager();
 
     @FXML
     private TextField firstNameInput;
@@ -22,11 +22,20 @@ public class AccountsController {
     @FXML
     private TextField addressInput;
 
-    public void createAccount() throws FileNotFoundException {
+    public void createAccount() throws Exception {
 
         User user = new User(firstNameInput.getText(), lastNameInput.getText(), addressInput.getText(), emailInput.getText()
                 , passwordInput.getText(), phoneNumberInput.getText());
-        user.saveUserDetails();
+        userManager.saveUserDetails(user);
     }
 
+    public boolean loadAccount(String userEmail, String userPassword) throws Exception {
+        User loginUser = userManager.userLogin(userEmail, userPassword);
+        if (loginUser != null) {
+            System.out.println(loginUser);
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
