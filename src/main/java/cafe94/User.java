@@ -155,20 +155,4 @@ public class User {
                 +activationDate+","+deactivationDate);
         userOut.close();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userType=" + userType +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", accountActive=" + accountActive +
-                ", activationDate=" + activationDate +
-                ", deactivationDate=" + deactivationDate +
-                '}';
-    }
 }
