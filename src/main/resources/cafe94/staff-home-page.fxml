@@ -17,13 +17,14 @@
 
     <HBox>
         <Button onAction="#switchToMakeOrder" text="Make Order" />
+      <Button mnemonicParsing="false" text="Button" />
     </HBox>
 
     <HBox>
-        <Button onAction="#switchToMakeBooking" text="View Menu">
+        <Button onAction="#onHelloButtonClick" text="View Menu">
          <HBox.margin>
             <Insets right="57.0" />
          </HBox.margin></Button>
-      <Button mnemonicParsing="false" onAction="#switchToMakeBooking" text="Account Details" />
+      <Button mnemonicParsing="false" text="Account Details" />
     </HBox>
 </VBox>

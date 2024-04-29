@@ -1,8 +1,9 @@
 package cafe94;
 import java.io.*;
-import java.util.Arrays;
+
 
 public class UserManager {
+
 
     public void saveUserDetails(User user) throws IOException {
 
@@ -38,10 +39,12 @@ public class UserManager {
 
                 if (userDetails[4].equals(loginUserEmail) && userDetails[2].equals(loginUserPassword)) {
 
-                    return new User(userDetails[0],userDetails[1],userDetails[3],userDetails[4],userDetails[2],userDetails[6]);
+                    return new User(userDetails[0],userDetails[1],userDetails[3],userDetails[4],
+                            userDetails[2],userDetails[6],Integer.parseInt(userDetails[9]));
                 }
             }
             return null;
     }
+
 }
 

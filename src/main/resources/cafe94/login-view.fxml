@@ -16,12 +16,12 @@
 
     <HBox>
         <Label fx:id="Username" style="-fx-padding: 5 10 0 0;" text="Username" />
-        <TextField fx:id="usernameInput" />
+        <TextField fx:id="usernameInput" promptText="Enter Username" />
     </HBox>
 
     <HBox>
         <Label fx:id="Password" style="-fx-padding: 5 14 0 0;" text="Password" />
-        <PasswordField fx:id="passwordInput" />
+        <PasswordField fx:id="passwordInput" promptText="Enter Password" />
     </HBox>
 
     <HBox>

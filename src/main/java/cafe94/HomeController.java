@@ -21,16 +21,14 @@ public class HomeController {
     private TextField username;
     @FXML
     private PasswordField password;
-    @FXML
-    protected void onHelloButtonClick() {
-        System.out.println("Hello from the home page");
-    }
 
     public void switchToMakeOrder(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("make-order.fxml")));
+
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("order-type-customer.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+
     }
 
     public void switchToMakeBooking(ActionEvent event) throws IOException {

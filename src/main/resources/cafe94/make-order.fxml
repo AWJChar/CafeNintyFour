@@ -1,11 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cafe94.OrderController">
    <children>
-      <Button mnemonicParsing="false" text="Hello" />
+      <HBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Label text="Spaghetti">
+               <HBox.margin>
+                  <Insets left="10.0" right="90.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="spaghetti" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets right="100.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Chicken Wings">
+               <HBox.margin>
+                  <Insets right="85.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="wings" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="114.0" text="Halloumi Souvlaki">
+               <HBox.margin>
+                  <Insets left="10.0" right="27.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="souvlaki" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets right="100.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Chips">
+               <HBox.margin>
+                  <Insets right="133.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="chips" mnemonicParsing="false" text="Add to Order">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Label text="Sirloin Steak">
+               <HBox.margin>
+                  <Insets left="10.0" right="75.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="sirloinSteak" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets right="100.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Chicken Satay">
+               <HBox.margin>
+                  <Insets right="90.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="satay" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Label text="Egg">
+               <HBox.margin>
+                  <Insets left="10.0" right="120.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="egg" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets right="100.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Lobster Thing">
+               <HBox.margin>
+                  <Insets right="90.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="lobster" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Label text="Pudding">
+               <HBox.margin>
+                  <Insets left="10.0" right="95.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="pudding" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets right="100.0" top="25.0" />
+               </HBox.margin>
+            </Button>
+            <Label text="Dust">
+               <HBox.margin>
+                  <Insets right="138.0" top="27.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="dust" mnemonicParsing="false" onAction="#addToOrder" text="Add to Order">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="48.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#submitOrder" text="Submit Order">
+               <HBox.margin>
+                  <Insets left="500.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </VBox>

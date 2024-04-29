@@ -32,6 +32,20 @@ public class User {
         userType = 0;
     }
 
+    public User(String firstName, String lastName, String address,
+                String emailAddress, String password, String phoneNumber, int userType){
+        userID = userID++;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.emailAddress = emailAddress;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        accountActive = true;
+        activationDate = LocalDate.now();
+        this.userType = userType;
+    }
+
     public static int getUserID() {
         return userID;
     }

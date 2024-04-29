@@ -56,16 +56,21 @@ public class LoginController {
 
         String username = usernameInput.getText();
         String password = passwordInput.getText();
-        //accountsController.loadAccount(username,password);
-        System.out.println(username);
-        System.out.println(password);
 
-        if (accountsController.loadAccount(username, password)) {
+        if (accountsController.loadAccount(username, password) == 0) {
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-page.fxml")));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
+
+        } else if (accountsController.loadAccount(username, password) == 1){
+
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("staff-home-page.fxml")));
+
+        } else if (accountsController.loadAccount(username, password) == 2){
+
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("admin-home-page.fxml")));
         }
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
     }
 
 }
