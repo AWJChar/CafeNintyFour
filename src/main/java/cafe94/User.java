@@ -4,6 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 
+/**
+ * Contains all user related information and allows for the saving of user data.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class User {
     private static int userID = 0;
     private int userType;
@@ -17,7 +22,15 @@ public class User {
     private LocalDate activationDate;
     private LocalDate deactivationDate;
 
-
+    /**
+     *Constructor for user without usertype.
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param emailAddress
+     * @param password
+     * @param phoneNumber
+     */
     public User(String firstName, String lastName, String address,
                 String emailAddress, String password, String phoneNumber){
         userID = userID++;
@@ -32,6 +45,16 @@ public class User {
         userType = 0;
     }
 
+    /**
+     * Constructor for user with user type.
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param emailAddress
+     * @param password
+     * @param phoneNumber
+     * @param userType
+     */
     public User(String firstName, String lastName, String address,
                 String emailAddress, String password, String phoneNumber, int userType){
         userID = userID++;
@@ -147,6 +170,10 @@ public class User {
         deactivationDate = LocalDate.now();
     }
 
+    /**
+     * saves current user to the user csv file.
+     * @throws FileNotFoundException
+     */
     public void saveUserDetails() throws FileNotFoundException {
         File userFile = new File("C:\\Users\\Alexander\\Projects\\CafeNintyFour\\src\\main\\resources\\users.csv");
         PrintWriter userOut = new PrintWriter(userFile);

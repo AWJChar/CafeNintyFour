@@ -21,6 +21,14 @@ public class UserManager {
         bw.close();
     }
 
+    /**
+     * Reads user details from csv and compares to parameters, returns the user if
+     * it exists.
+     * @param loginUserEmail user input email from log in page
+     * @param loginUserPassword user input password from log in page
+     * @return User object
+     * @throws IOException
+     */
     public User userLogin(String loginUserEmail, String loginUserPassword) throws IOException {
         String fileURL = ("src/main/resources/users.csv");
 

@@ -10,6 +10,12 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+/**
+ * OrderType Controller controls the order type stage,
+ * where users can choose which type of order they are making.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class OrderTypeController {
 
     private int orderType;
@@ -17,6 +23,11 @@ public class OrderTypeController {
     private Scene scene;
     private Parent root;
 
+    /**
+     * Controls order type choice and loads ordering stage.
+     * @param event button click
+     * @throws Exception
+     */
     public void getOrderType(ActionEvent event) throws Exception {
         Button orderTypeButton = (Button) event.getSource();
         OrderManager.getCurrentOrder().setOrderType(OrderType.valueOf(orderTypeButton.getId()));
@@ -26,6 +37,10 @@ public class OrderTypeController {
         stage.setScene(scene);
     }
 
+    /**
+     * Sets order type locally.
+     * @param orderType value of order type
+     */
     public void setOrderType(int orderType) {
         this.orderType = orderType;
     }

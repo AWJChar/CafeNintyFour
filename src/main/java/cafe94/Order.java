@@ -1,8 +1,21 @@
 package cafe94;
 import java.util.ArrayList;
 
+/**
+ * Order class holds all order related details. Allows users to
+ * create/edit orders and allows staff to set completion status.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class Order {
     private static int orderID = 0;
+    private ArrayList<Dish> orderDishes = new ArrayList<>();
+    private double price;
+    private boolean status = false;
+    private OrderType orderType;
+
+    private String orderDestination;
+    private String orderDestinationString;
 
     public static void setOrderID(int orderID) {
         Order.orderID = orderID;
@@ -40,14 +53,6 @@ public class Order {
         this.orderDestinationString = orderDestinationString;
     }
 
-    private ArrayList<Dish> orderDishes = new ArrayList<>();
-    private double price;
-    private boolean status = false;
-    private OrderType orderType;
-
-    private String orderDestination;
-    private String orderDestinationString;
-
     public Order() {
 
     }
@@ -73,6 +78,10 @@ public class Order {
         return orderType;
     }
 
+    /**
+     * Calculates the price of an order
+     * @return price
+     */
     public double calculatePrice(){
         for (Dish dish:orderDishes) {
             price = price + dish.getDishPrice();
@@ -80,6 +89,10 @@ public class Order {
         return price;
     }
 
+    /**
+     * Breaks array of dishes into separate dish names
+     * @return dishes in order
+     */
     public String getOrderDishes() {
         String orderDetails = "[";
         for (Dish dishes: orderDishes) {

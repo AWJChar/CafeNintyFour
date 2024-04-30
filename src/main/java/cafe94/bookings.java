@@ -1,5 +1,8 @@
 package cafe94;
 
+/**
+ *
+ */
 public class bookings {
     private static int bookingID = 0;
     private final int customerID;

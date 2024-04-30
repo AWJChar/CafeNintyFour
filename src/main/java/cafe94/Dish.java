@@ -1,11 +1,23 @@
 package cafe94;
 
+/**
+ * Dish class holds details of dishes which are available at a restaurant.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class Dish {
     private double dishPrice;
     private String dishName;
     private String dishDetails;
     private boolean dishOfDay;
 
+    /**
+     * Dish constructor
+     * @param price Dish price
+     * @param name Name of dish
+     * @param details details of dish
+     * @param dishOfDay Is it currently dish of the day?
+     */
     public Dish(double price, String name, String details, boolean dishOfDay){
 
         this.dishPrice = price;

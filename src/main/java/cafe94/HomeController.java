@@ -11,17 +11,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Controls the function of the home page.
+ * Directs users to correct pages based on button presses.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class HomeController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    @FXML
-    private TextField username;
-    @FXML
-    private PasswordField password;
-
+    /**
+     * Switches to order scenes where user can choose order type and items.
+     * @param event button click
+     * @throws IOException
+     */
     public void switchToMakeOrder(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("order-type-customer.fxml")));
@@ -31,6 +37,11 @@ public class HomeController {
 
     }
 
+    /**
+     * Switches to booking scene where users can book a table at the restaurant.
+     * @param event button click
+     * @throws IOException
+     */
     public void switchToMakeBooking(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("make-booking.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

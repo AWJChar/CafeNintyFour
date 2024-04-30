@@ -1,24 +1,31 @@
 package cafe94;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
+
+
+/**
+ * Order Controller controls the order fxml page. It allows
+ * a user to choose which menu items they would like and submit them
+ * as an eat in, takeaway or delivery order.
+ * @author Alexander Charlesworth
+ * @version 0.1.1
+ */
 public class OrderController {
 
+    //Holds dishes which are in the order
     ArrayList<Dish> orderDishes = new ArrayList<>();
+
+    //Holds all dishes which are on the menu
     ArrayList<Dish> allDishes = new ArrayList<>();
 
     private int orderType;
@@ -29,8 +36,10 @@ public class OrderController {
     private String orderDestination;
     private Order order;
 
-    private final String[] tableNumbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"};
-
+    /**
+     * loads all dish objects from csv
+     * @throws Exception
+     */
     public void loadDishes() throws Exception {
         String fileURL = ("src/main/resources/dishes.csv");
 
@@ -52,12 +61,18 @@ public class OrderController {
         }
     }
 
+    /**
+     * Adds relevant item to order
+     * @param event button click
+     * @throws Exception
+     */
     public void addToOrder(ActionEvent event) throws Exception {
 
         loadDishes();
 
         Button orderButton = (Button) event.getSource();
 
+        //Based on ID of button clicked the relevant dish is added to the order
         switch (orderButton.getId()) {
             case ("spaghetti"):
                 for (Dish dish : allDishes) {
@@ -139,6 +154,12 @@ public class OrderController {
         allDishes.clear();
     }
 
+    /**
+     * Sets the dishes of the order object and sends user to next page based
+     * on the type of order made.
+     * @param event button click
+     * @throws Exception
+     */
     public void submitOrder(ActionEvent event) throws Exception {
         OrderManager.getCurrentOrder().setOrderDishes(orderDishes);
 
@@ -151,13 +172,5 @@ public class OrderController {
         scene = new Scene(root);
         stage.setScene(scene);
         OrderManager.saveOrderDetails();
-    }
-
-    public void setOrderDestination(ActionEvent event) throws Exception {
-        if (order.getOrderType().equals("EATIN")) {
-            orderDestination = "";
-        } else if (orderType == 0) {
-            orderDestination = "";
-        }
     }
 }

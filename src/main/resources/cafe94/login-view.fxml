@@ -33,7 +33,7 @@
     </HBox>
    <HBox>
       <children>
-         <Button onAction="#switchToCreateAccount" prefHeight="26.0" prefWidth="234.0" text="Create User" />
+         <Button fx:id="createAccountPage" onAction="#switchToCreateAccount" prefHeight="26.0" prefWidth="234.0" text="Create User" />
       </children>
    </HBox>
 </VBox>
